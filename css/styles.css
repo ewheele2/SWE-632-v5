@@ -1,0 +1,610 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    /*fix Login and Sign up overlapping with homepage title issue */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    flex-wrap: wrap;  
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Home Icon in Header */
+.header-left {
+    position: absolute;
+    left: 10px;  /* Adjust position of home icon in the left corner */
+    top: 40%;
+    left: 2%;
+    transform: translateY(-65%);
+}
+
+.header-left img {
+    width: 65px;  /* Adjust the size of the home icon */
+    height: auto; /* Keep aspect ratio of the image */
+}
+
+/* fix button title overlapping issue */
+header .header-left,
+header .header-center,
+header .auth-buttons {
+    flex: 1 1 30%; /* Default widths for larger screens */
+    text-align: center;
+}
+
+header .header-left {
+    text-align: left;
+}
+
+header .header-center {
+    flex: 2 1 40%; /* Center section takes more space */
+    text-align: center;
+}
+
+header .auth-buttons {
+    text-align: right;
+}
+
+/* Mobile-specific Fixes (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the header elements vertically */
+        align-items: center; /* Center align the elements */
+        padding: 15px; /* Reduce padding for better spacing */
+    }
+
+    header .header-left,
+    header .header-center,
+    header .auth-buttons {
+        flex: 1 1 100%; /* Allow all sections to take 100% of the width */
+        text-align: center; /* Center-align the text */
+    }
+
+    header .auth-buttons {
+        margin-top: -15px; /* Add spacing between auth buttons and the other elements */
+        display:flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 10px;
+    }
+
+    /* Optional: Adjust the font size for smaller screens */
+    header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    header p {
+        font-size: 14px; /* Reduce the font size for mobile */
+    }
+
+    /* Adjust .header-left image for mobile */
+    .header-left img {
+        width: 50px; /* Make the home icon smaller on mobile */
+        height: auto;
+    }
+
+    /* Optional: Adjust spacing of the home icon for better alignment */
+    .header-left {
+        margin-left: 10px;
+        margin-top: -10px;
+    }
+}
+
+/* Game Container */
+.game-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Game Card */
+.game-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+/* Game Images */
+.game-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+/* Play Button */
+.play-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.play-btn:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Instruction Button */
+.instruction-btn {
+    display: inline-block;
+    margin-top: 11.5px;
+    padding: 11.5px 16.5px;
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.instruction-btn:hover {
+    background-color: #e68900;
+}
+
+/* Align Buttons Properly */
+.game-card .play-btn, 
+.game-card .instruction-btn {
+    margin: 10px 5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.auth-buttons .btn {
+    background-color: white;
+    color: #007bff;
+    padding: 10px 15px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Tic Tac Toe Styles */
+.tic-tac-toe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+#status {
+    font-size: 1.2em;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#reset {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#reset:hover {
+    background-color: #0056b3;
+}
+
+/* Tic Tac Toe Modal (Ensure Centering & Display) */
+.tic-tac-toe-modal {
+    display: none; /* Hide initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears on top */
+}
+
+/* Modal Content Styling */
+.tic-tac-toe-modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 300px; /* Set a proper width */
+}
+
+/* Fix: Ensure Tic-Tac-Toe Buttons Work */
+.tic-tac-toe-modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Buttons for Tic-Tac-Toe */
+#playAgain {
+    background-color: #007bff;
+    color: white;
+}
+
+#playAgain:hover {
+    background-color: #0056b3;
+}
+
+#goHome {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+#goHome:hover {
+    background-color: #b30000;
+}
+
+/* Rock-Paper-Scissors Modal */
+.rps-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Rock-Paper-Scissors Modal Content */
+.rps-modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 300px;
+}
+
+/* Buttons for Rock-Paper-Scissors */
+.rps-modal-content button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Play Again Button */
+#rpsPlayAgain {
+    background-color: #007bff;
+    color: white;
+}
+
+#rpsPlayAgain:hover {
+    background-color: #0056b3;
+}
+
+/* Go Home Button */
+#rpsGoHome {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+#rpsGoHome:hover {
+    background-color: #b30000;
+}
+
+/* Reset Confirmation Modal */
+#rpsResetModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#rpsResetModal .rps-modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 300px;
+}
+
+#rpsResetModal button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Confirm Reset Button */
+#confirmReset {
+    background-color: #007bff;
+    color: white;
+}
+
+#confirmReset:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Cancel Reset Button */
+#cancelReset {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+#cancelReset:hover {
+    background-color: #b30000;
+    transform: scale(1.1);
+}
+
+/* Reset Confirmation Modal for Tic-Tac-Toe */
+#ticTacToeResetModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+#ticTacToeResetModal .rps-modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+    width: 300px;
+}
+
+/* Buttons inside the modal */
+#ticTacToeResetModal button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Confirm Reset Button */
+#confirmTicTacToeReset {
+    background-color: #007bff;
+    color: white;
+}
+
+#confirmTicTacToeReset:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Cancel Reset Button */
+#cancelTicTacToeReset {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+#cancelTicTacToeReset:hover {
+    background-color: #b30000;
+    transform: scale(1.1);
+}
+
+/* Style for all buttons inside popups */
+.rps-modal-content button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    background-color: #007bff;
+    color: white;
+}
+
+.rps-modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+
+/* General Button Styling */
+.rps-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#rrps-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Rock-Paper-Scissors Choice Buttons */
+.rps-choice {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+.rps-choice:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Reset Game Button */
+.rps-reset {
+    background-color: #007bff;
+    color: white;
+}
+
+.rps-reset:hover {
+    background-color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Play Again Button */
+.rps-play-again {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+.rps-play-again:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+/* Go Home Button */
+.rps-go-home {
+    background-color: #ff4b4b; /* Red */
+    color: white;
+}
+
+.rps-go-home:hover {
+    background-color: #b30000;
+    transform: scale(1.1);
+}
+
+.rps-click-effect:active {
+    transform: scale(0.95);
+    background-color: #0069d9;
+}
+
+.game-title{
+    color: #0069d9;
+    font-size: 60px;
+}
