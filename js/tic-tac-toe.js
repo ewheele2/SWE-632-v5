@@ -36,6 +36,11 @@ function handleCellClick(event) {
     cell.textContent = currentPlayer;
     cell.classList.add("taken");
 
+    // Add X or O class to cell for custom color styling
+    const placedMark = currentPlayer;
+    cell.classList.add(placedMark.toLowerCase()); // Adds 'x' or 'o'
+
+
     checkWinner();
     if (gameActive) {
         togglePlayer();
@@ -91,7 +96,7 @@ function resetTicTacToeGame() {
 
     cells.forEach(cell => {
         cell.textContent = "";
-        cell.classList.remove("taken");
+        cell.classList.remove("taken", "x", "o");
     });
 
     // Hide all modals

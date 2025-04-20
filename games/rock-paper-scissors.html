@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="header-left">
-            <a href="#" id="homeButton"><img src="../assets/Home-icon-1.png" alt="Home Icon"></a>
+            <a href="#" id="homeButton"><img src="../assets/home-icon-2.webp" alt="Home Icon"></a>
         </div>
     
         <div class="header-center">
@@ -23,9 +23,12 @@
     <h2 id="turnIndicator">Player 1's Turn</h2>
     <p class="game-instructions">Select rock, paper, or scissors. Rock beats scissors, scissors beats paper, and paper beats rock.</p>
     <p>First to 5 wins!</p>
-    <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('rock')">Rock</button>
-    <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('paper')">Paper</button>
-    <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('scissors')">Scissors</button>
+
+    <div class="rps-group">
+        <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('rock')">Rock</button>
+        <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('paper')">Paper</button>
+        <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('scissors')">Scissors</button>
+    </div>
     
 
     <h2 id="result"></h2>

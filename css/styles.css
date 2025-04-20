@@ -356,6 +356,14 @@ footer {
     z-index: 1000;
 }
 
+.rps-group {
+    display: flex;
+}
+
+.rps-group button {
+    width: 10%;
+}
+
 /* Rock-Paper-Scissors Modal Content */
 .rps-modal-content {
     background: white;
@@ -620,4 +628,15 @@ footer {
 
 #cancelHome{
     background-color: red;
+}
+
+/* X and O Styling */
+.cell.x {
+    color: #007bff; /* Blue for X */
+    font-weight: bold;
+}
+
+.cell.o {
+    color: #ff4b4b; /* Red for O */
+    font-weight: bold;
 }
