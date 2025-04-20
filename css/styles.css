@@ -241,7 +241,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 30vh;
 }
 
 #board {
@@ -545,7 +545,7 @@ footer {
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: blue;
     color: white;
     border: none;
     border-radius: 5px;
@@ -568,7 +568,7 @@ footer {
 
 /* Reset Game Button */
 .rps-reset {
-    background-color: #007bff;
+    background-color: blue;
     color: white;
 }
 
@@ -606,5 +606,18 @@ footer {
 
 .game-title{
     color: #0069d9;
-    font-size: 60px;
+    font-size: 40px;
+}
+
+.game-instructions{
+    color: #fc7b03;
+    font-weight: bolder;
+}
+
+#confirmHome{
+    background-color: green;
+}
+
+#cancelHome{
+    background-color: red;
 }

@@ -17,8 +17,10 @@
                 <p>Play fun, simple games directly in your browser! Click Home button to return to Home page.</p>
             </div>
     </header>
-    <h1 class="game-title">Tic Tac Toe</h1>
-    <p>Tic-Tac-Toe is a two-player game. Take turns placing Xs and Os on a 3x3 grid. The first to get three in a row wins!</p>
+    <h2 class="game-title">Tic Tac Toe</h2>
+    <p class="game-instructions">Tic-Tac-Toe is a two-player game. Take turns placing Xs and Os on a 3x3 grid. The first to get three in a row wins!</p>
+    <br>
+    <p id="status">Player X's turn</p>
     <div class="tic-tac-toe-container">
         <div id="board">
             <div class="cell" data-index="0"></div>
@@ -33,7 +35,7 @@
         </div>
     </div>
 
-    <p id="status">Player X's turn</p>
+    
     <button id="reset">Reset Game</button>
 
     <!-- Win Modal for Tic-Tac-Toe -->
@@ -64,8 +66,8 @@
     <div id="homeConfirmModal" class="rps-modal">
         <div class="rps-modal-content">
             <p>Are you sure you want to quit and go back to the home page?</p>
-            <button id="confirmHome" class="rps-btn rps-reset">Yes</button>
-            <button id="cancelHome" class="rps-btn rps-go-home">No</button>
+            <button id="confirmHome">Yes</button>
+            <button id="cancelHome">No</button>
         </div>
     </div>
     <script src="../js/tic-tac-toe.js"></script>

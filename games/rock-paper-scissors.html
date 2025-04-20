@@ -19,9 +19,9 @@
         </div>
     </header>
 
-    <h1  class="game-title">Rock-Paper-Scissors</h1>
+    <h2  class="game-title">Rock-Paper-Scissors</h2>
     <h2 id="turnIndicator">Player 1's Turn</h2>
-    <p>Select rock, paper, or scissors. Rock beats scissors, scissors beats paper, and paper beats rock.</p>
+    <p class="game-instructions">Select rock, paper, or scissors. Rock beats scissors, scissors beats paper, and paper beats rock.</p>
     <p>First to 5 wins!</p>
     <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('rock')">Rock</button>
     <button class="rps-btn rps-choice rps-click-effect" onclick="playGame('paper')">Paper</button>
@@ -53,8 +53,8 @@
   <div id="homeConfirmModal" class="rps-modal">
     <div class="rps-modal-content">
         <p>Are you sure you want to quit and go back to the home page?</p>
-        <button id="confirmHome" class="rps-btn rps-reset">Yes</button>
-        <button id="cancelHome" class="rps-btn rps-go-home">No</button>
+        <button id="confirmHome">Yes</button>
+        <button id="cancelHome">No</button>
     </div>
   </div>
 
