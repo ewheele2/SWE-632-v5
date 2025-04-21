@@ -16,6 +16,9 @@ const playVsComputerBtn = document.getElementById("playVsComputer");
 const playVsPlayerBtn = document.getElementById("playVsPlayer");
 
 const turnIndicator = document.getElementById("turnIndicator");
+const rockBtn = document.getElementById("rockBtn");
+const paperBtn = document.getElementById("paperBtn");
+const scissorsBtn = document.getElementById("scissorsBtn");
 
 // Home button and modal elements
 const homeButton = document.getElementById("homeButton");
@@ -45,6 +48,9 @@ window.onload = function () {
 };
 
 // Set game mode based on player selection
+rockBtn?.addEventListener("click", () => playGame("rock"));
+paperBtn?.addEventListener("click", () => playGame("paper"));
+scissorsBtn?.addEventListener("click", () => playGame("scissors"));
 playVsComputerBtn.addEventListener("click", function () {
     isVsComputer = true;
     rpsGameModeModal.style.display = "none";
